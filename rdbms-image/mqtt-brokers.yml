@@ -3,12 +3,12 @@ services:
 
   dh_proxy:
     ports:
-      - "1883:8883"
+      - "1883:1883"
     links:
       - mqtt_broker1
       - mqtt_broker2
     volumes:
-      - "./nginx-mqtt-brokers.conf:/etc/nginx/stream.d/nginx-mqtt-brokers:ro,Z"
+      - "./nginx-mqtt-brokers.conf:/etc/nginx/stream.d/nginx-mqtt-brokers.conf:ro,Z"
 
   mqtt_broker1:
     image: devicehive/devicehive-mqtt:development
